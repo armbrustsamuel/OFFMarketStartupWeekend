@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"OFFMarketStartupWeekend/model/models"
-], function(UIComponent, Device, models) {
+	"OFFMarketStartupWeekend/model/models",
+	"OFFMarketStartupWeekend/controller/HelloDialog"
+], function(UIComponent, Device, models, HelloDialog) {
 	"use strict";
 
 	return UIComponent.extend("OFFMarketStartupWeekend.Component", {
@@ -22,6 +23,26 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+			
+			//set Dialog
+			this.helloDialog = new HelloDialog(); 
+		},
+		
+		createContent : function() {
+    		// create root view
+    		var oView = sap.ui.view({
+    			id : "app",
+    			viewName : "OFFMarketStartupWeekend.view.App",
+    			type : "JS",
+    			viewData : { component : this }
+    		});
+    		
+    		var i18nModel = new sap.ui.model.resource.ResourceModel({
+    		   bundleUrl: "/webapp/i18n/i18n.properties" 
+    		});                         
+    		oView.setModel(i18nModel,"i18n");
+    		
+    		return oView;
 		}
 	});
 

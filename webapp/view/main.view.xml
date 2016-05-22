@@ -2,8 +2,36 @@
 	xmlns="sap.m">
 	<App>
 		<pages>
-			<Page title="{i18n>title}">
-				<content></content>
+			<Page title="{i18n>DashboardText}">
+				<content>
+				    <TileContainer id="myTileContainer" 
+            		    tileDelete="handleTileDelete">
+            		    <StandardTile id="oTile1"
+            		    	icon="sap-icon://cart"
+            		        title="Customer"
+            		        info="Check Wishlist"
+            		        infoState="Success"
+            		        press="handleListItemPress"
+            		        />
+            		        <StandardTile id="oTile2"
+            		    	icon="sap-icon://settings"
+            		        title="Company"
+            		        info="Management"
+            		        infoState="Success"
+            		        press="handleListItemPress"
+            		        />
+        		    </TileContainer>
+				</content>
+				<!--<footer>-->
+				<!--    <OverflowToolbar>-->
+				<!--        <ToolbarSpacer/>-->
+				<!--        <Image-->
+    <!--        		    	visible="true"-->
+    <!--        		    	width="80px"-->
+    <!--        		    	height="40px"-->
+    <!--        		    	src="/webapp/Image/Image1.jpg"/>-->
+				<!--    </OverflowToolbar>-->
+    <!--    		</footer>-->
 			</Page>
 		</pages>
 	</App>

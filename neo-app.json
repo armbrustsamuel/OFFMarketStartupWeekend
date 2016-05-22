@@ -18,6 +18,14 @@
         "entryPath": "/test-resources"
       },
       "description": "SAPUI5 Test Resources"
+    },
+    {
+        "path": "/webapp/offmarketstartupweekend",
+        "target": {
+                "type": "destination",
+                "name": "offmarketstartupweekend"
+        },
+        "description": "Back End URL"
     }
   ],
   "sendWelcomeFileRedirect": true
