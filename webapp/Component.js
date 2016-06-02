@@ -2,8 +2,10 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
 	"OFFMarketStartupWeekend/model/models",
-	"OFFMarketStartupWeekend/controller/HelloDialog"
-], function(UIComponent, Device, models, HelloDialog) {
+	"OFFMarketStartupWeekend/controller/HelloDialog",
+	"OFFMarketStartupWeekend/controller/PromotionDialog",
+	"OFFMarketStartupWeekend/controller/CatalogDialog"
+], function(UIComponent, Device, models, HelloDialog, PromotionDialog, CatalogDialog) {
 	"use strict";
 
 	return UIComponent.extend("OFFMarketStartupWeekend.Component", {
@@ -26,6 +28,17 @@ sap.ui.define([
 			
 			//set Dialog
 			this.helloDialog = new HelloDialog(); 
+			this.helloDialogCompany = new HelloDialog();
+			
+			this.promotionDialog = new PromotionDialog();
+			
+			this.catalogDialog = new CatalogDialog();
+			
+			this.selectedSector = new String();
+			
+			this.productSelected = new String();
+			
+			this.ProductBySector = new sap.ui.model.json.JSONModel();
 		},
 		
 		createContent : function() {

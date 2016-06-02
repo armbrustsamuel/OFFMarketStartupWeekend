@@ -1,0 +1,56 @@
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m"
+	controllerName="OFFMarketStartupWeekend.controller.ProductListCompany" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>ProductListText}"
+		        showNavButton="true"
+		        navButtonPress="handleNavButtonPress">
+				<content>
+				    <List id="ProductList" mode="None" items="{Tasks>/taskList}" updateStarted="true">
+                        <headerToolbar>
+					      	<Toolbar>
+					      		<Title text="{i18n>productListTitle}"/>
+					      		<ToolbarSpacer/>
+					      		<SearchField width="50%" liveChange="onFilterInvoices" selectOnFocus="false" />
+					      	</Toolbar>
+					      </headerToolbar>
+					      <items>
+	                        <StandardListItem xmlns="sap.m"
+	                            id="id"
+	                            type="Active"
+	                            visible="true"
+	                            press="handleListItemPress"
+	                            info="De:   3.49 BRL            Por:  {Tasks>value} BRL"
+	                            infoState="Success"
+	                            selected= "handleListItemPress"
+	                            title="{Tasks>productName}"
+	                            description="{Tasks>description}"
+	                            icon="sap-icon://product"
+	                            />
+                        	</items>
+                        </List>
+				</content>
+				<footer>
+				    <OverflowToolbar>
+				        <ToolbarSpacer/>
+				        <OverflowToolbarButton
+				        	id="addButton"
+				        	text="Flag"
+				        	icon="sap-icon://add-product"
+				        	press="onAddButtonPress"
+				        	active="false"/>
+				        <Image
+            		    	visible="true"
+            		    	width="80px"
+            		    	height="40px"
+            		    	src="/webapp/Image/logo_pequeno_transp.png"/>
+				    </OverflowToolbar>
+        		</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

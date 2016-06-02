@@ -1,0 +1,78 @@
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m"
+	controllerName="OFFMarketStartupWeekend.controller.CreatePromotion" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Crie a Promoção" showNavButton="true" navButtonPress="onBackClicked">
+				<content>
+					<Panel>
+						<headerToolbar>
+							<Toolbar>
+							    <Label text="Nome do Produto"/>
+							</Toolbar>
+						</headerToolbar>
+						<Input id="productNameInput" width="50%"/>
+					</Panel>
+					<Panel>
+						<headerToolbar>
+							<Toolbar>
+							    <Label text="Setor"/>
+							</Toolbar>
+						</headerToolbar>
+						<Input id="sectorInput" width="50%"/>
+					</Panel>
+					<Panel>
+						<headerToolbar>
+							<Toolbar>		    	
+							    <Label text="Valor Atual"/>
+							    
+							</Toolbar>
+						</headerToolbar>
+						<Input id="currentValueInput" width="50%"/>
+					</Panel>
+					<Panel>
+						<headerToolbar>
+							<Toolbar>		    	
+							    <Label text="Valor Anterior"/>
+							</Toolbar>
+						</headerToolbar>
+						<Input id="oldValueInput"  width="50%"/>
+					</Panel>
+					<Panel>
+						<headerToolbar>
+							<Toolbar>		    	
+							    <Label text="Desconto"/>
+							</Toolbar>
+						</headerToolbar>
+						<Input id="DiscountInput" width="50%"/>	    
+					</Panel>
+					<Panel>
+						<headerToolbar>
+							<Toolbar>		    
+							    <Label text="Prazo"/>
+							</Toolbar>
+						</headerToolbar>
+						<Input id="prizeInput" width="50%"/>
+					</Panel>
+					<Panel>
+						<headerToolbar>
+							<Toolbar>		    	
+							    <Label text="Quantidade"/>
+							</Toolbar>
+						</headerToolbar>
+						<Input id="quantityInput" width="50%"/>	
+					</Panel>
+				</content>
+				<footer>
+				    <Toolbar>
+		    		    <ToolbarSpacer/>
+		                <Button text="Salvar" press="onSaveClicked" icon="sap-icon://save"/>
+		            </Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

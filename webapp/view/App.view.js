@@ -20,14 +20,31 @@ sap.ui.jsview("OFFMarketStartupWeekend.view.App", {
 		customer.getController().nav = this.getController();
 		this.app.addPage(customer, false);
 		
-		//var productList = sap.ui.xmlview("ProductList", "OFFMarketStartupWeekend.view.ProductList");
-		//productList.getController().nav = this.getController();
-		//this.app.addPage(productList, false);
+		var productList = sap.ui.xmlview("ProductList", "OFFMarketStartupWeekend.view.ProductList");
+		productList.getController().nav = this.getController();
+		this.app.addPage(productList, false);
+		
+		var productOverview = sap.ui.xmlview("ProductOverview", "OFFMarketStartupWeekend.view.ProductOverview");
+		productOverview.getController().nav = this.getController();
+		this.app.addPage(productOverview, false);
 		
 		
 		var company = sap.ui.xmlview("Company", "OFFMarketStartupWeekend.view.CompanyMain");
 		company.getController().nav = this.getController();
 		this.app.addPage(company, false);
+		
+		var productListCompany = sap.ui.xmlview("ProductListCompany", "OFFMarketStartupWeekend.view.ProductListCompany");
+		productListCompany.getController().nav = this.getController();
+		this.app.addPage(productListCompany, false);
+		
+		var productOverviewCompany = sap.ui.xmlview("ProductOverviewCompany", "OFFMarketStartupWeekend.view.ProductOverviewCompany");
+		productOverviewCompany.getController().nav = this.getController();
+		this.app.addPage(productOverviewCompany, false);
+		
+		//Create promotion
+		var createPromotion = sap.ui.xmlview("CreatePromotion", "OFFMarketStartupWeekend.view.CreatePromotion");
+		createPromotion.getController().nav = this.getController();
+		this.app.addPage(createPromotion, false);
 		
 		
 		// done

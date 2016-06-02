@@ -7,13 +7,19 @@
   "build": {
     "targetFolder": "dist",
     "sourceFolder": "webapp",
-    "buildRequired": true
+    "buildRequired": false,
+    "lastBuildDateTime": "Sun, 22 May 2016 20:25:35 GMT"
   },
   "generation": [
     {
       "templateId": "ui5template.basicSAPUI5ApplicationProject",
       "templateVersion": "1.32.0",
       "dateTimeStamp": "Sat, 21 May 2016 21:38:54 GMT"
+    },
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationComponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Sun, 22 May 2016 15:49:05 GMT"
     }
   ],
   "translation": {
@@ -38,5 +44,10 @@
   "hybrid": {
     "hatVersion": "1.14.5",
     "appNamespace": "OFFMarketStartupWeekend"
+  },
+  "hcpdeploy": {
+    "account": "i843890trial",
+    "name": "offmarketstartupweekend",
+    "lastVersionWeTriedToDeploy": "1.0.1"
   }
 }

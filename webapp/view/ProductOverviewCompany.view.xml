@@ -1,0 +1,66 @@
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m"
+	controllerName="OFFMarketStartupWeekend.controller.ProductOverviewCompany" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>ProductOverviewText}" showNavButton="true" navButtonPress="handleNavButtonPress">
+        		<ObjectHeader icon="/webapp/Image/heineken.jpg" >
+                <attributes>
+                  <ObjectAttribute
+                    title="Nome do Produto"
+                    text="Heineken"/>
+                  <ObjectAttribute
+                    title="Setor"
+                    text="Bebidas"/>
+                  <ObjectAttribute
+                    title="Quantidade"
+                    text="35 Unidades"/>
+                  <ObjectAttribute
+                    title="Origem"
+                    text="Finlandesa"/>
+                  <ObjectAttribute
+                    title="Tipo"
+                    text="Cerveja Puro Malte"/>
+                </attributes>
+                
+                <statuses>
+                   <ObjectStatus
+                    title="Stock"
+                    text="Disponível"
+                    state="Success"/>        
+                </statuses>
+              </ObjectHeader>
+              <IconTabBar
+                    id="itb1"
+                    selectedKey="key3"
+                    upperCase="true"
+                    class="sapUiResponsiveContentPadding">
+                    <items>
+                      <IconTabFilter
+                        icon="sap-icon://hint">
+                        <FlexBox
+							direction="Column"
+							alignItems="Center">
+							<items>
+								<Button
+									text=" 35 Unidades"
+									type="Emphasized"
+									width="300px"
+									enabled="false"
+									icon="sap-icon://cart"
+									iconFirst="true"
+									iconDensityAware="true"
+									textDirection="Inherit">
+								</Button> 
+							</items>
+						</FlexBox>
+                      </IconTabFilter>
+                    </items>
+               </IconTabBar>
+        	</Page>
+		</pages>
+	</App>
+</mvc:View>

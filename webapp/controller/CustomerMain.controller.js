@@ -1,6 +1,8 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageToast",
+	"OFFMarketStartupWeekend/model/filter"
+], function(Controller, MessageToast, filter) {
 	"use strict";
 
 	return Controller.extend("OFFMarketStartupWeekend.controller.CustomerMain", {
@@ -31,29 +33,47 @@ sap.ui.define([
             this.getView().setModel(this.oTasksModel, "Tasks");
     	},
     	
+    	onFilterInvoices : function(oEvent) {
+			
+			//Building Filter - calling external method
+			var aFilter = filter.filterData(oEvent);
+			
+			//Filter binding
+			var oList = this.getView().byId("SectorList");
+			var oBinding = oList.getBinding("items");
+			oBinding.filter(aFilter);
+		},
+		
+		onBeforeRendering: function () {
+			this.onOpenDialog();
+		},
+    	
     	onAfterRendering: function() {
     	    //this.getView().setBusy(true);
             //this.fnLoadTasksFromServer(this);
-            this.onOpenDialog();
+            //this.onOpenDialog();
+            
+            //var sMsg = "PROMOÇÃO RELÂMPAGO!		VERIFIQUE SUAS NOTIFICAÇÕES";
+			//MessageToast.show(sMsg);
+			
+			//window.setTimeout(sMsg, 10000);
+    	},
+    	
+    	onListButtonPress: function() {
+    		this.getOwnerComponent().catalogDialog.open(this.getView());
+    	},
+    	
+    	onFlagButtonPress: function() {
+    		this.getOwnerComponent().promotionDialog.open(this.getView());
     	},
     	
     	handleListItemPress : function (evt) {
-    		var filters = [];
-    		var sFilter;
+
     		var query = evt.getSource().getProperty('title');
-    		var oModel = sap.ui.getCore().byId("app").getModel();
+    		this.getOwnerComponent().selectedSector = query;
     		
-    		//Just check if the binding has been correctly done
-    		console.log(query);
-    		console.log(oModel);
+    		this.nav.to("ProductList");
     		
-    		if (query && query.length > 0) {
-    			
-    			sFilter = new sap.ui.model.Filter("name", sap.ui.model.FilterOperator.EQ, query);
-    		    filters.push(sFilter);
-    		}
-    		
-    		sap.ui.getCore().byId("app").to("ProductList");
     	},
 	    
     	handleNavButtonPress : function (evt) {
@@ -66,6 +86,7 @@ sap.ui.define([
 			//calls the open method available in HelloDialog.js
 			//Indicates that this is the view to dialog will be assigned
 			this.getOwnerComponent().helloDialog.open(this.getView());
+
 		}
 
 	});
